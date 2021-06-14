@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import request from 'superagent';
 import Loading from './Loading';
 import PokeItem from './PokeItem';
-import './PokeDetail.css';
 export default class PokeDetail extends Component {
   state = {
     pokeDetail: {},
     loading: false,
 };
+
 componentDidMount() {
     this.fetchDetail();
 }
@@ -28,10 +28,9 @@ fetchDetail = async () => {
                         <h2>Welcome to Poke Details Page</h2>
                         <div className='pokeItemDivDiv'>
                         <PokeItem 
-                        pokemon={this.state.pokeDetail.pokemon} 
-                        urlImage = {this.state.pokeDetail.url_image} 
+                        name={this.state.pokeDetail.pokemon} 
+                        url_image = {this.state.pokeDetail.url_image} 
                         attack = {this.state.pokeDetail.attack}
-                        defense = {this.state.pokeDetail.defense}
                         ability_1 = {this.state.pokeDetail.ability_1}
                         type_1 = {this.state.pokeDetail.type_1} /> </div>
                     </>
