@@ -20,9 +20,6 @@ export default class App extends Component{
         <Route path='/pokemon'exact component={PokeIndex} />
         <Route path='/' exact Component={Home} />
         </Switch>
-        
-    
-        
       </div>
       </BrowserRouter>
     );

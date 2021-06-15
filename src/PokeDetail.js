@@ -12,16 +12,16 @@ componentDidMount() {
     this.fetchDetail();
 }
 fetchDetail = async () => {
-  this.setState({ loading: true });
-  const apiId = this.props.match.params.poke;
-  const data = await request.get(
-      `https://pokedex-alchemy.herokuapp.com/api/pokedex/${apiId}`
-  );
-  this.setState({ pokeDetail: data.body });
-  this.setState({ loading: false });}
-  render() {
+this.setState({ loading: true });
+const apiId = this.props.match.params.poke;
+const data = await request.get(
+    `https://pokedex-alchemy.herokuapp.com/api/pokedex/${apiId}`
+);
+this.setState({ pokeDetail: data.body });
+this.setState({ loading: false });}
+render() {
     return (
-      <div className='pokeItemDiv'>
+    <div className='pokeItemDiv'>
         {this.state.loading && <Loading/>}
                 {!this.state.loading && (
                     <>
@@ -35,7 +35,7 @@ fetchDetail = async () => {
                         type_1 = {this.state.pokeDetail.type_1} /> </div>
                     </>
                 )}
-      </div>
+        </div>
     )
-  }
+}
 }
